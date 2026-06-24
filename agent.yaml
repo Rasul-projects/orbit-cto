@@ -1,1 +1,18 @@
+id: orbit-cto-impact-analyzer
+name: Orbit CTO Impact Analyzer
+description: Traverses the GitLab Orbit knowledge graph to determine the architectural blast radius of code changes.
+engine: gemini-1.5-pro
+entrypoint: backend/agents/impact_agent.py
+platform_version: "1.1"
+visibility: public
+license: MIT
 
+tools:
+  - name: gitlab_orbit_graph_query
+    type: custom_cli
+    command: "glab orbit query"
+    description: Executes a Cypher-like knowledge graph query against the indexed GitLab SDLC repository data.
+
+env:
+  GITLAB_TOKEN: REQUIRED
+  ORBIT_GRAPH_URL: REQUIRED
