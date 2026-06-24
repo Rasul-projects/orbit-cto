@@ -21,3 +21,12 @@ Traditional AI coding assistants handle localized execution tasks flawlessly: th
 
 ##  Licensing
 This project is open-source and released under the terms of the **MIT License**.
+
+##  Technical Stack & System Integration
+
+Despite the repository composition showing a high volume of UI markup for the CTO Dashboard workspace, the core engine relies on a robust, asynchronous Python backend configuration:
+
+* **Orchestration Layer:** Built with Python 3.12 utilizing the advanced `google-genai` SDK framework for low-latency inference processing.
+* **Data Ingestion API:** Interfaces directly with the live **GitLab REST API v4** using secure personal access token handshakes to ingest telemetry payloads and metadata objects dynamically.
+* **State Aggregation:** Implements a decoupled data transfer model, utilizing an atomic `result.json` caching mechanism to bridge terminal agent pipelines with client-side DOM views instantly.
+* **Frontend Telemetry UI:** Tailored with a lightweight HTML5 asynchronous framework styled via Tailwind CSS for rapid telemetry rendering.
